@@ -20,7 +20,7 @@ This project uses z3 solver to check if a contract refines another.
     assumption: x > 10 and y > 0
     guarantee: area > 10
 
-### Assumptions:
+### Assumptions made in the input format:
 1. Each input and output variable is specified as a pair of name and type inside angular brackets. Multiple variables are separated with ';'.
 2. The assumption and guarantee formulas are written in infix notation and each assert is separated with an 'and'.
 
