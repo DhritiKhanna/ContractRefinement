@@ -1,0 +1,9 @@
+input: <x, real>; <y, real>
+output: <z, real>
+assumption: y != 0
+guarantee: z = x / y
+-----
+input: <y, real>
+output: <z, real>
+assumption: y != 0
+guarantee: z in real

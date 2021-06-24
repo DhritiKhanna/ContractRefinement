@@ -1,0 +1,9 @@
+input: <x, int>; <y, int>
+output: <area, int>
+assumption: x != 0 and y != 0
+guarantee: area = x * y
+-----
+input: <x, int>; <y, int>
+output: <area, int>
+assumption: x > 10 and y > 0
+guarantee: area > 10

@@ -2,13 +2,23 @@ package contract;
 
 import java.util.ArrayList;
 
+import com.microsoft.z3.BoolExpr;
+
 import util.Pair;
 
 public class Contract {
-	String assumption;
-	String guarantee;
-	ArrayList<Pair<String, String>> inputVars; // input variables and their types
-	ArrayList<Pair<String, String>> outputVars; // output variables and their types
+	private String assumption; // As input by the user
+	private String guarantee;  // As input by the user
+	private ArrayList<Pair<String, String>> inputVars;  // input variables and their types
+	private ArrayList<Pair<String, String>> outputVars; // output variables and their types
+	
+	private BoolExpr[] assumptionZ3Expr; // Filled in by the parser
+	private BoolExpr[] guaranteeZ3Expr;  // Filled in by the parser
+	
+	public Contract() {
+		inputVars = new ArrayList<Pair<String, String>>();
+		outputVars = new ArrayList<Pair<String, String>>();
+	}
 	
 	public String getAssumption() {
 		return assumption;
@@ -45,5 +55,18 @@ public class Contract {
 	}
 	public void setOutputVar(Pair<String, String> outputVar) {
 		outputVars.add(outputVar);
+	}
+
+	public BoolExpr[] getAssumptionZ3Expr() {
+		return assumptionZ3Expr;
+	}
+	public void setAssumptionZ3Expr(BoolExpr[] assumptionZ3Expr) {
+		this.assumptionZ3Expr = assumptionZ3Expr;
+	}
+	public BoolExpr[] getGuaranteeZ3Expr() {
+		return guaranteeZ3Expr;
+	}
+	public void setGuaranteeZ3Expr(BoolExpr[] guaranteeZ3Expr) {
+		this.guaranteeZ3Expr = guaranteeZ3Expr;
 	}
 }
